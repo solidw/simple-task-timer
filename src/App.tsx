@@ -1,17 +1,12 @@
 import React from 'react';
-import styled from 'styled-components';
 import Timer from './components/Timer';
+import './App.css';
 
 function App() {
   return (
-    <AppWrapper>
+    <div className="app-wrapper">
       <Timer />
-    </AppWrapper>
+    </div>
   );
 }
-
-const AppWrapper = styled.div`
-  display: flex;
-  height: 100vh;
-`;
 export default App;
