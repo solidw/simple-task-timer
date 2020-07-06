@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import './Timer.css';
+import React, { useState, useEffect } from "react";
+import "./Timer.css";
 
 function Timer() {
   const [time, setTime] = useState<number>(0);
@@ -15,17 +15,13 @@ function Timer() {
   };
 
   const timeFormat = (timeCount: number): string => {
-    console.log(timeCount);
-    const hours = Math.trunc(timeCount / 3600)
-      .toString()
-      .padStart(2, '0');
-    console.log(hours);
-    const minutes = Math.trunc(timeCount / 3600)
-      .toString()
-      .padStart(2, '0');
-    const seconds = timeCount.toString().padStart(2, '0');
+    const hours = Math.trunc(timeCount / 3600);
+    const minutes = Math.trunc((timeCount % 3600) / 60);
+    const seconds = timeCount % 60;
 
-    return [hours, minutes, seconds].join(':');
+    return [hours, minutes, seconds]
+      .map((_) => _.toString().padStart(2, "0"))
+      .join(":");
   };
 
   useEffect(() => {
@@ -49,11 +45,11 @@ function Timer() {
       <div className="row">
         <button
           className={`button button-primary button-primary-${
-            isActive ? 'active' : 'inactive'
+            isActive ? "active" : "inactive"
           }`}
           onClick={toggle}
         >
-          {isActive ? 'Pause' : 'Start'}
+          {isActive ? "Pause" : "Start"}
         </button>
         <button className="button" onClick={reset}>
           Reset
