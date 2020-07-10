@@ -30,3 +30,8 @@ export default function TimerContextProvider({
     <TimerContext.Provider value={timerData}>{children}</TimerContext.Provider>
   );
 }
+
+export const useTimerContext = () => {
+  const { timerData } = useContext(TimerContext);
+  return timerData;
+};
