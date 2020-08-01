@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import Timer from "./components/Timer";
 import "./App.css";
+import TimerContextProvider from "./contexts/TimerContext";
 
 function App() {
   useEffect(() => {
@@ -10,10 +11,13 @@ function App() {
         JSON.stringify(`{something:"something"}`)
       );
   }, []);
+  console.log("app is on");
   return (
-    <div className="app-wrapper">
-      <Timer />
-    </div>
+    <TimerContextProvider>
+      <div className="app-wrapper">
+        <Timer />
+      </div>
+    </TimerContextProvider>
   );
 }
 export default App;

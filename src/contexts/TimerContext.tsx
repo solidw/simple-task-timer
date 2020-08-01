@@ -1,4 +1,5 @@
-import React, { useState, useContext, createContext } from "react";
+import React, { useState, useContext, createContext, useEffect } from "react";
+const storage = require("electron-json-storage");
 
 export type TimerState = {
   title: string;
@@ -25,7 +26,14 @@ export default function TimerContextProvider({
   children: React.ReactNode;
 }) {
   const [timerData, setTimerData] = useState(initialContext);
-
+  console.log("timercontext is on");
+  storage.get("test", (error, data) => {
+    console.log(error);
+    console.log(data);
+  });
+  useEffect(() => {
+    return () => console.log("test");
+  }, []);
   return (
     <TimerContext.Provider value={timerData}>{children}</TimerContext.Provider>
   );
