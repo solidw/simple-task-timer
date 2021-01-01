@@ -1,11 +1,14 @@
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-function App() {
+const App: React.FC = () => {
   return (
-    <div className="App">
+    <Router>
+      <Switch>
+        <Route path="/" exact />
+      </Switch>
+      <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
@@ -19,6 +22,8 @@ function App() {
         </a>
       </header>
     </div>
+    </Router>
+    
   );
 }
 
