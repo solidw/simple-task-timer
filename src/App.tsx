@@ -1,23 +1,25 @@
-import React, { useEffect } from "react";
-import Timer from "./components/Timer";
-import "./App.css";
-import TimerContextProvider from "./contexts/TimerContext";
+import React from 'react';
+import './App.css';
 
-function App() {
-  useEffect(() => {
-    return () =>
-      window.localStorage.setItem(
-        "asf",
-        JSON.stringify(`{something:"something"}`)
-      );
-  }, []);
-  console.log("app is on");
+function App(): JSX.Element {
   return (
-    <TimerContextProvider>
-      <div className="app-wrapper">
-        <Timer />
-      </div>
-    </TimerContextProvider>
+    <div className='App'>
+      <header className='App-header'>
+        <p>
+          Edit <code>src/App.tsx</code> and save to reload.
+        </p>
+
+        <a
+          className='App-link'
+          href='https://reactjs.org'
+          target='_blank'
+          rel='noopener noreferrer'
+        >
+          Learn React
+        </a>
+      </header>
+    </div>
   );
 }
+
 export default App;
