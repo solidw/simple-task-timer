@@ -28,6 +28,8 @@ const Description = styled.p`
 
 const Display = styled.div`
   font-family: 'LABDigital';
+  text-align: center;
+  font-size: 4rem;
   margin: 2rem 0;
 `;
 
