@@ -11,6 +11,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - Electron
 - styled-components
 - Recoil
+- Functional Component
 - ...on updating
 
 ## Design
