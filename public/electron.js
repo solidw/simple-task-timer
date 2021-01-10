@@ -34,7 +34,7 @@ function createWindow() {
     mainWindow.webContents.openDevTools({ mode: 'detach' });
   }
 
-  Menu.setApplicationMenu(null);
+  mainWindow.setMenuBarVisibility(false);
   mainWindow.setResizable(true);
   mainWindow.on('closed', () => (mainWindow = null));
   mainWindow.focus();
