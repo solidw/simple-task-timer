@@ -17,6 +17,7 @@ function createWindow() {
       devTools: isDev,
     },
     show: false,
+    resizable: false,
     titleBarStyle: 'hiddenInset',
   });
 
